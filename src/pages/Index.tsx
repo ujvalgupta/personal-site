@@ -1,4 +1,11 @@
 import Layout from "@/components/Layout";
+import { Github, Linkedin, Twitter } from "lucide-react";
+
+const socials = [
+  { icon: Twitter, href: "https://x.com", label: "X" },
+  { icon: Github, href: "https://github.com", label: "GitHub" },
+  { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
+];
 
 const Index = () => {
   return (
@@ -24,6 +31,21 @@ const Index = () => {
             <span className="font-mono text-xs text-muted-foreground">
               building & shipping
             </span>
+          </div>
+
+          <div className="flex items-center gap-4 pt-4 animate-fade-in stagger-5">
+            {socials.map((s) => (
+              <a
+                key={s.label}
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors duration-300"
+                aria-label={s.label}
+              >
+                <s.icon size={18} strokeWidth={1.5} />
+              </a>
+            ))}
           </div>
         </div>
       </div>
