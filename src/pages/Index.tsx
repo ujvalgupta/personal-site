@@ -26,12 +26,6 @@ const Index = () => {
             I build cool stuff.
           </p>
 
-          <div className="flex items-center gap-3 animate-fade-in stagger-4">
-            <span className="inline-block w-1.5 h-1.5 rounded-full bg-primary animate-pulse-glow" />
-            <span className="font-mono text-[10px] text-muted-foreground/60 tracking-[0.2em] uppercase">
-              building & shipping
-            </span>
-          </div>
 
           <div className="flex items-center gap-4 animate-fade-in stagger-5">
             {socials.map((s) => (
