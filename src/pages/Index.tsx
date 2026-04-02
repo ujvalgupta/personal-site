@@ -23,7 +23,7 @@ const Index = () => {
           </h1>
 
           <p className="text-base text-muted-foreground max-w-sm leading-relaxed animate-fade-in stagger-3">
-            I build cool stuff — at the intersection of tech and growth.
+            I build cool stuff.
           </p>
 
           <div className="flex items-center gap-3 animate-fade-in stagger-4">
