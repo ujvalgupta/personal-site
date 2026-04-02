@@ -13,7 +13,7 @@ const Index = () => {
       <div className="min-h-[70vh] flex flex-col justify-center">
         <div className="space-y-8">
           <div className="animate-fade-in stagger-1">
-            <span className="font-mono text-[10px] text-muted-foreground/70 tracking-[0.3em] uppercase">
+            <span className="font-mono text-[10px] text-muted-foreground tracking-[0.3em] uppercase">
               hey, i'm
             </span>
           </div>
