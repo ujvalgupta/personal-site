@@ -22,8 +22,8 @@ const Index = () => {
             Ujval<span className="text-primary">.</span>
           </h1>
 
-          <p className="text-base text-muted-foreground max-w-sm leading-relaxed animate-fade-in stagger-3">
-            I build cool stuff.
+          <p className="text-base text-foreground/60 max-w-sm leading-relaxed animate-fade-in stagger-3">
+            A delusional 22 year old building cool stuff<span className="text-primary">.</span>
           </p>
 
 
