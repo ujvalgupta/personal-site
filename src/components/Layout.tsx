@@ -20,7 +20,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/60 backdrop-blur-xl border-b border-border/50">
         <div className="max-w-2xl mx-auto px-6 h-14 flex items-center justify-between">
           <Link to="/" className="font-mono text-sm text-foreground hover:text-primary transition-colors duration-300">
-            ujval<span className="text-primary">.</span>
+            <span className="text-primary">~/</span>ujval
           </Link>
           <div className="flex gap-8">
             {navItems.map((item) => (
