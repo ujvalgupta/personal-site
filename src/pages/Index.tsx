@@ -22,8 +22,8 @@ const Index = () => {
             Ujval<span className="text-primary">.</span>
           </h1>
 
-          <p className="text-[15px] text-foreground/55 max-w-sm leading-relaxed animate-fade-in stagger-3">
-            A delusional 22 year old building cool stuff
+          <p className="font-mono text-[11px] tracking-[0.15em] uppercase text-foreground/40 animate-fade-in stagger-3">
+            Delusional <span className="text-primary/50 mx-1">·</span> 22 <span className="text-primary/50 mx-1">·</span> Building
           </p>
 
           <div className="flex items-center gap-5 pt-1 animate-fade-in stagger-4">
