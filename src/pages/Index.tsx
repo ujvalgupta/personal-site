@@ -23,7 +23,7 @@ const Index = () => {
           </h1>
 
           <p className="text-base text-muted-foreground max-w-sm leading-relaxed animate-fade-in stagger-3">
-            I build cool stuff — at the intersection of tech and growth.
+            I build cool stuff.
           </p>
 
           <div className="flex items-center gap-3 animate-fade-in stagger-4">
@@ -33,32 +33,29 @@ const Index = () => {
             </span>
           </div>
 
-          <div className="flex items-center gap-5 pt-6 animate-fade-in stagger-5">
+          <div className="flex items-center gap-4 animate-fade-in stagger-5">
             {socials.map((s) => (
               <a
                 key={s.label}
                 href={s.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-1.5 text-muted-foreground hover:text-primary transition-all duration-300"
+                className="text-muted-foreground hover:text-primary transition-all duration-300"
                 aria-label={s.label}
               >
-                <s.icon size={15} strokeWidth={1.5} />
-                <span className="font-mono text-[10px] tracking-wide opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  {s.label}
-                </span>
+                <s.icon size={16} strokeWidth={1.5} />
               </a>
             ))}
           </div>
 
-          {/* Subtle CTA */}
-          <div className="pt-8 animate-fade-in stagger-6">
+          {/* CTA */}
+          <div className="pt-6 animate-fade-in stagger-6">
             <a
               href="/stuff"
-              className="group inline-flex items-center gap-2 font-mono text-[11px] text-muted-foreground/50 hover:text-primary tracking-widest uppercase transition-all duration-300"
+              className="group inline-flex items-center gap-2.5 text-sm text-foreground hover:text-primary border border-border/60 hover:border-primary/40 rounded-full px-5 py-2.5 transition-all duration-300 hover:shadow-[0_0_20px_-6px_hsl(36_100%_50%_/_0.3)]"
             >
-              see what i've built
-              <ArrowUpRight size={12} className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <span className="font-mono text-[11px] tracking-wide">See what I've built</span>
+              <ArrowUpRight size={13} className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
           </div>
         </div>
