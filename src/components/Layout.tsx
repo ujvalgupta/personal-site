@@ -10,7 +10,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   const location = useLocation();
 
   return (
-    <div className="min-h-screen bg-background relative">
+    <div className="h-screen overflow-hidden bg-background relative">
       {/* Noise texture overlay */}
       <div className="noise-overlay" />
       
@@ -40,21 +40,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         </div>
       </nav>
 
-      <main className="relative z-10 max-w-2xl mx-auto px-6 pt-28 pb-20">
+      <main className="relative z-10 max-w-2xl mx-auto px-6 pt-28 pb-20 h-full">
         {children}
       </main>
-
-      {/* Minimal footer */}
-      <footer className="relative z-10 border-t border-border/30">
-        <div className="max-w-2xl mx-auto px-6 py-8 flex items-center justify-between">
-          <span className="font-mono text-[10px] text-muted-foreground/50 tracking-widest uppercase">
-            © 2025
-          </span>
-          <span className="font-mono text-[10px] text-muted-foreground/50 tracking-widest uppercase">
-            made with obsession
-          </span>
-        </div>
-      </footer>
     </div>
   );
 };
