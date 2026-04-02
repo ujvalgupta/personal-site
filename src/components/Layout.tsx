@@ -18,7 +18,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       <div className="ambient-glow animate-float" />
 
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/60 backdrop-blur-xl border-b border-border/50">
-        <div className="max-w-2xl mx-auto px-6 h-14 flex items-center justify-between">
+        <div className="max-w-[1100px] mx-auto px-10 h-14 flex items-center justify-between">
           <Link to="/" className="font-mono text-sm text-foreground hover:text-primary transition-colors duration-300">
             <span className="text-primary">~/</span>ujval
           </Link>
@@ -40,7 +40,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         </div>
       </nav>
 
-      <main className="relative z-10 max-w-2xl mx-auto px-6 pt-28 pb-20 h-full">
+      <main className="relative z-10 w-full px-6 pt-14 h-full flex items-center justify-center">
         {children}
       </main>
     </div>
