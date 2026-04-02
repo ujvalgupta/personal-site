@@ -12,9 +12,8 @@ const Index = () => {
     <Layout>
       <div className="min-h-[70vh] flex flex-col justify-center">
         <div className="space-y-8">
-          <div className="animate-fade-in stagger-1 flex items-center gap-3">
-            <span className="inline-block w-6 h-px bg-primary/60" />
-            <span className="font-mono text-[11px] text-foreground/70 tracking-[0.25em] uppercase">
+          <div className="animate-fade-in stagger-1">
+            <span className="font-mono text-xs text-primary/80 tracking-[0.2em]">
               hey, i'm
             </span>
           </div>
