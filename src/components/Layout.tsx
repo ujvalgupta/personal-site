@@ -1,46 +1,17 @@
-import { Link, useLocation } from "react-router-dom";
-
-const navItems = [
-  { label: "Home", path: "/" },
-  { label: "Stuff", path: "/stuff" },
-  { label: "Thoughts", path: "/thoughts" },
-];
+import Nav from "@/components/layout/Nav";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
-  const location = useLocation();
-
   return (
-    <div className="h-screen overflow-hidden bg-background relative">
-      {/* Noise texture overlay */}
+    <div className="h-[100dvh] overflow-hidden bg-background relative">
+      {/* Grain texture */}
       <div className="noise-overlay" />
-      
-      {/* Ambient glow */}
-      <div className="ambient-glow animate-float" />
 
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/60 backdrop-blur-xl border-b border-border/50">
-        <div className="max-w-[1100px] mx-auto px-10 h-14 flex items-center justify-between">
-          <Link to="/" className="font-mono text-sm text-foreground hover:text-primary transition-colors duration-300">
-            <span className="text-primary">~/</span>ujval
-          </Link>
-          <div className="flex gap-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className={`text-xs tracking-wide uppercase transition-all duration-300 link-hover ${
-                  location.pathname === item.path
-                    ? "text-primary"
-                    : "text-muted-foreground hover:text-foreground"
-                }`}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </nav>
+      {/* Ambient glow — full bleed, no hard edges */}
+      <div className="ambient-glow" />
 
-      <main className="relative z-10 w-full px-6 pt-14 h-full flex items-center justify-center">
+      <Nav />
+
+      <main className="relative z-10 w-full h-full pt-14 flex items-center justify-center px-6">
         {children}
       </main>
     </div>

@@ -1,10 +1,5 @@
 import Layout from "@/components/Layout";
-
-interface Thought {
-  title: string;
-  date: string;
-  preview: string;
-}
+import type { Thought } from "@/types";
 
 const thoughts: Thought[] = [
   {
@@ -32,9 +27,9 @@ const thoughts: Thought[] = [
 const Thoughts = () => {
   return (
     <Layout>
-      <div className="space-y-14">
+      <div className="w-full max-w-2xl space-y-10 sm:space-y-14">
         <div className="space-y-3 animate-fade-in stagger-1">
-          <h1 className="text-4xl font-semibold tracking-tighter">
+          <h1 className="text-3xl sm:text-4xl font-semibold tracking-tighter">
             Thoughts<span className="text-primary">.</span>
           </h1>
           <p className="text-muted-foreground/70 text-sm max-w-xs">
@@ -46,7 +41,7 @@ const Thoughts = () => {
           {thoughts.map((thought, i) => (
             <div
               key={thought.title}
-              className={`group py-6 border-b border-border/40 hover:border-border transition-all duration-500 cursor-pointer animate-fade-in stagger-${i + 2}`}
+              className={`group py-5 sm:py-6 border-b border-border/40 hover:border-border transition-all duration-500 cursor-pointer animate-fade-in stagger-${i + 2}`}
             >
               <div className="flex items-start justify-between gap-6">
                 <div className="space-y-2">

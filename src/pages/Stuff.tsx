@@ -1,12 +1,6 @@
 import Layout from "@/components/Layout";
 import { ArrowUpRight } from "lucide-react";
-
-interface Project {
-  title: string;
-  description: string;
-  tag: string;
-  link?: string;
-}
+import type { Project } from "@/types";
 
 const projects: Project[] = [
   {
@@ -40,9 +34,9 @@ const tagColors: Record<string, string> = {
 const Stuff = () => {
   return (
     <Layout>
-      <div className="space-y-14">
+      <div className="w-full max-w-2xl space-y-10 sm:space-y-14">
         <div className="space-y-3 animate-fade-in stagger-1">
-          <h1 className="text-4xl font-semibold tracking-tighter">
+          <h1 className="text-3xl sm:text-4xl font-semibold tracking-tighter">
             Stuff<span className="text-primary">.</span>
           </h1>
           <p className="text-muted-foreground/70 text-sm max-w-xs">
@@ -61,16 +55,16 @@ const Stuff = () => {
                   <h3 className="text-sm font-medium group-hover:text-primary transition-colors duration-300">
                     {project.title}
                   </h3>
-                  <ArrowUpRight 
-                    size={12} 
-                    className="text-muted-foreground/0 group-hover:text-primary transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" 
+                  <ArrowUpRight
+                    size={12}
+                    className="text-muted-foreground/0 group-hover:text-primary transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                   />
                 </div>
                 <p className="text-xs text-muted-foreground/60 group-hover:text-muted-foreground transition-colors duration-300">
                   {project.description}
                 </p>
               </div>
-              <span className={`font-mono text-[9px] uppercase tracking-[0.2em] border rounded-full px-2.5 py-1 ${tagColors[project.tag] || "text-muted-foreground border-border"}`}>
+              <span className={`font-mono text-[9px] uppercase tracking-[0.2em] border rounded-full px-2.5 py-1 shrink-0 ml-4 ${tagColors[project.tag] || "text-muted-foreground border-border"}`}>
                 {project.tag}
               </span>
             </div>
