@@ -43,7 +43,7 @@ const Index = () => {
           ))}
         </div>
 
-        <div className="mt-8 sm:mt-10 animate-fade-in stagger-5">
+        <div className="mt-8 sm:mt-10 animate-fade-in stagger-5" style={{ marginLeft: '9px' }}>
           <a
             href="/stuff"
             className="group inline-flex items-center gap-3 text-foreground hover:text-primary border border-border/60 hover:border-primary/40 rounded-full px-6 sm:px-8 py-3 sm:py-3.5 transition-all duration-300 hover:shadow-[0_0_28px_-8px_hsl(36_100%_50%_/_0.25)]"
