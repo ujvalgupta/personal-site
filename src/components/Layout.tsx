@@ -1,6 +1,6 @@
 import Nav from "@/components/layout/Nav";
 
-const Layout = ({ children }: { children: React.ReactNode }) => {
+const Layout = ({ children, scrollable }: { children: React.ReactNode; scrollable?: boolean }) => {
   return (
     <div className="h-[100dvh] overflow-hidden bg-background relative">
       {/* Grain texture */}
@@ -11,7 +11,13 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
       <Nav />
 
-      <main className="relative z-10 w-full h-full pt-14 flex items-center justify-center px-6">
+      <main
+        className={`relative z-10 w-full h-full pt-14 px-6 ${
+          scrollable
+            ? "overflow-y-auto flex flex-col items-center"
+            : "flex items-center justify-center"
+        }`}
+      >
         {children}
       </main>
     </div>
