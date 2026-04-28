@@ -11,18 +11,23 @@ function formatDate(iso: string) {
   };
 }
 
+function sanitize(text: string) {
+  return text.replace(/\\n/g, "\n").replace(/\n{2,}/g, "\n");
+}
+
 function LogItem({ log, i }: { log: LogEntry; i: number }) {
   const [expanded, setExpanded] = useState(false);
   const [isClamped, setIsClamped] = useState(false);
   const ref = useRef<HTMLParagraphElement>(null);
   const { date, time } = formatDate(log.created_at);
+  const content = sanitize(log.content);
 
   useLayoutEffect(() => {
     const el = ref.current;
     if (el && !expanded) {
       setIsClamped(el.scrollHeight > el.clientHeight);
     }
-  }, [log.content, expanded]);
+  }, [content, expanded]);
 
   return (
     <div
@@ -38,7 +43,7 @@ function LogItem({ log, i }: { log: LogEntry; i: number }) {
           !expanded ? "line-clamp-5" : ""
         }`}
       >
-        {log.content}
+        {content}
       </p>
       {isClamped && (
         <button
