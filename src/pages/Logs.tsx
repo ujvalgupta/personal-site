@@ -62,19 +62,17 @@ const Logs = () => {
                 key={log.id}
                 className={`group py-5 sm:py-6 border-b border-border/40 hover:border-border transition-all duration-500 animate-fade-in stagger-${Math.min(i + 2, 6)}`}
               >
-                <div className="flex items-start justify-between gap-6">
-                  <p className="text-sm text-foreground/80 leading-relaxed group-hover:text-foreground transition-colors duration-300 max-w-lg whitespace-pre-wrap">
-                    {log.content}
-                  </p>
-                  <div className="flex flex-col items-end gap-1 shrink-0 pt-0.5">
-                    <span className="font-mono text-[10px] text-muted-foreground/40 tracking-wide">
-                      {time}
-                    </span>
-                    <span className="font-mono text-[10px] text-muted-foreground/30 tracking-wide">
-                      {date}
-                    </span>
-                  </div>
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="font-mono text-[10px] text-primary/50 tracking-wide">
+                    {time}
+                  </span>
+                  <span className="font-mono text-[10px] text-muted-foreground/30 tracking-wide">
+                    {date}
+                  </span>
                 </div>
+                <p className="text-sm text-foreground/80 leading-relaxed group-hover:text-foreground transition-colors duration-300 whitespace-pre-wrap break-words w-full">
+                  {log.content}
+                </p>
               </div>
             );
           })}
