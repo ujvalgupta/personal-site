@@ -1,9 +1,7 @@
-import { useState } from "react";
+import { useState, useRef, useLayoutEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import Layout from "@/components/Layout";
 import { supabase, type LogEntry } from "@/lib/supabase";
-
-const COLLAPSE_THRESHOLD = 300;
 
 function formatDate(iso: string) {
   const d = new Date(iso);
@@ -15,8 +13,16 @@ function formatDate(iso: string) {
 
 function LogItem({ log, i }: { log: LogEntry; i: number }) {
   const [expanded, setExpanded] = useState(false);
+  const [isClamped, setIsClamped] = useState(false);
+  const ref = useRef<HTMLParagraphElement>(null);
   const { date, time } = formatDate(log.created_at);
-  const isLong = log.content.length > COLLAPSE_THRESHOLD || log.content.split("\n").length > 5;
+
+  useLayoutEffect(() => {
+    const el = ref.current;
+    if (el && !expanded) {
+      setIsClamped(el.scrollHeight > el.clientHeight);
+    }
+  }, [log.content, expanded]);
 
   return (
     <div
@@ -27,13 +33,14 @@ function LogItem({ log, i }: { log: LogEntry; i: number }) {
         <span className="font-mono text-[10px] text-muted-foreground/30 tracking-wide">{date}</span>
       </div>
       <p
+        ref={ref}
         className={`text-sm text-foreground/80 leading-relaxed group-hover:text-foreground transition-colors duration-300 whitespace-pre-wrap break-words w-full ${
-          !expanded && isLong ? "line-clamp-5" : ""
+          !expanded ? "line-clamp-5" : ""
         }`}
       >
         {log.content}
       </p>
-      {isLong && (
+      {isClamped && (
         <button
           onClick={() => setExpanded((v) => !v)}
           className="mt-2.5 font-mono text-[10px] text-primary/50 hover:text-primary transition-colors duration-200 tracking-wide"
